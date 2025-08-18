@@ -37,7 +37,7 @@ dependencies:
   get: ^4.6.5 # State management package (GetX)
   permission_handler: ^11.3.0 # Package for handling permissions
   image_picker: ^1.1.2 # Package for picking images from the gallery or camera
-
+  file_picker: ^6.1.0 # Package for picking files
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -21,6 +21,8 @@ A small Flutter project for Task Assignment by SuperCoder Recruitment Process. I
     - package for handling permissions
 - image_picker: ^1.1.2 
     - package for picking images from the gallery or camera
+- file_picker: ^6.1.0 
+    - package for picking files (attachments)
 
 ## Architecture
 1. bindings/

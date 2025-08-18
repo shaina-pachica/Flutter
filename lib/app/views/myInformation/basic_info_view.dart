@@ -14,18 +14,16 @@ class BasicInfoView extends StatelessWidget {
     final BasicInformationController controller = Get.put(
       BasicInformationController(),
     );
-    
 
     return CustomFrame(
       title: "Basic Information",
       child: ListView(
         children: [
-
           // ID field (read-only)
           LabeledTextField(
             label: 'ID',
             controller: TextEditingController(text: controller.id),
-            readOnly: true, 
+            readOnly: true,
           ),
 
           const SizedBox(height: 16),
@@ -35,8 +33,8 @@ class BasicInfoView extends StatelessWidget {
             () => LabeledTextField(
               label: 'Email',
               controller: controller.emailController,
-              errorText: controller.emailError.value.isNotEmpty
-                  ? controller.emailError.value
+              errorText: controller.email_error.value.isNotEmpty
+                  ? controller.email_error.value
                   : null,
               onChanged: controller.updateEmail,
             ),
@@ -49,8 +47,8 @@ class BasicInfoView extends StatelessWidget {
             () => LabeledTextField(
               label: 'Phone Number',
               controller: controller.phoneController,
-              errorText: controller.phoneError.value.isNotEmpty
-                  ? controller.phoneError.value
+              errorText: controller.phone_error.value.isNotEmpty
+                  ? controller.phone_error.value
                   : null,
               onChanged: controller.updatePhone,
               buttonText: 'Change',
@@ -59,7 +57,7 @@ class BasicInfoView extends StatelessWidget {
                 Get.snackbar(
                   'Phone Verification',
                   'Authentication number sent!',
-                  snackPosition: SnackPosition.BOTTOM,
+                  snackPosition: SnackPosition.TOP,
                   duration: const Duration(seconds: 2),
                 );
               },
@@ -68,12 +66,13 @@ class BasicInfoView extends StatelessWidget {
 
           const SizedBox(height: 16),
 
+          // Name field
           Obx(
             () => LabeledTextField(
               label: 'Nickname',
               controller: controller.nicknameController,
-              errorText: controller.nicknameError.value.isNotEmpty
-                  ? controller.nicknameError.value
+              errorText: controller.nickname_error.value.isNotEmpty
+                  ? controller.nickname_error.value
                   : null,
               onChanged: controller.updateNickname,
             ),
@@ -81,26 +80,27 @@ class BasicInfoView extends StatelessWidget {
 
           const SizedBox(height: 16),
 
+          // Instagram field
           Obx(
             () => LabeledTextField(
               label: 'Instagram',
               controller: controller.instagramController,
-              errorText: controller.instagramError.value.isNotEmpty
-                  ? controller.instagramError.value
+              errorText: controller.instagram_error.value.isNotEmpty
+                  ? controller.instagram_error.value
                   : null,
               onChanged: controller.updateInstagram,
-              
             ),
           ),
 
           const SizedBox(height: 16),
 
+          // Link field for representative work
           Obx(
             () => LabeledTextField(
               label: 'Representative Work Link',
               controller: controller.linkController,
-              errorText: controller.linkError.value.isNotEmpty
-                  ? controller.linkError.value
+              errorText: controller.link_error.value.isNotEmpty
+                  ? controller.link_error.value
                   : null,
               onChanged: controller.updateLink,
             ),
@@ -108,20 +108,30 @@ class BasicInfoView extends StatelessWidget {
 
           const SizedBox(height: 16),
 
-          // ❗ Portfolio, filepicker (insert here)
+          // Portfolio field with file picker
           LabeledTextField(
             label: 'Portfolio',
             controller: controller.portfolioController,
-            onIconPressed: () {
-              // Handle file picker logic here
-              Get.snackbar(
-                'File Picker',
-                'Open file picker to select portfolio!',
-                snackPosition: SnackPosition.BOTTOM,
-                duration: const Duration(seconds: 2),
-              );
-            },
+            onIconPressed: controller.pickPortfolioFile,
           ),
+
+          const SizedBox(height: 25),
+
+          Obx(() => ElevatedButton(
+      onPressed: controller.has_changes.value ? controller.saveChanges : null,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: controller.has_changes.value ? Colors.purple : Colors.grey,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        minimumSize: const Size(double.infinity, 52),
+      ),
+      child: const Text(
+        "Save",
+        style: TextStyle(fontSize: 16, color: Colors.white),
+      ),
+    )),
+
+
+          const SizedBox(height: 16),
         ],
       ),
     );
