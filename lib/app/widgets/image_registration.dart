@@ -8,7 +8,7 @@ class ImageRegistration extends StatelessWidget {
   Future<void> _pickImage(BuildContext context, ImageSource source) async {
     final picker = ImagePicker();
     await picker.pickImage(source: source); 
-    // 🔹 handle image storage or upload later
+    // ❗ handle image storage or upload later
   }
 
   @override

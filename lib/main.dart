@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app/routes/app_pages.dart';
+import 'package:get/get.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -10,11 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MyFlyn App (SuperCoder Task)',
+      title: 'MyFlyn App (Shaina Pachica)',
       initialRoute: AppPages.initial,
-      routes: AppPages.routes,
+      getPages: AppPages.routes,
     );
   }
 }

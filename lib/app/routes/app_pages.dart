@@ -1,28 +1,26 @@
-import 'package:flutter/material.dart';
+import 'package:get/get.dart'; // Importing GetX for state management
+
 // Importing views for routing
-import '../views/announcement_view.dart';
-import '../views/campaign_view.dart';
-import '../views/faq_view.dart';
 import '../views/home_view.dart';
-import '../views/info_view.dart';
-import '../views/inquiry_view.dart';
-import '../views/logout_view.dart';
-import '../views/terms_view.dart';
-import '../views/withdraw_view.dart';
+import '../views/myInformation/my_info_view.dart';
+
+// Importing bindings for dependency injection
+import '../bindings/my_info_binding.dart'; // Binding for My Information
+
+part 'app_routes.dart';
 
 class AppPages {
-  static const initial = '/';
+  static const initial = '/home';
+  static const basicInfo = '/basic-info'; // Initial route for the app);
 
-  static final routes = {
-    '/': (context) => const HomeView(),
-    // '/campaign': (context) => const CampaignView(),
-    // '/info': (context) => const InfoView(),
-    // '/announcement': (context) => const AnnouncementView(),
-    // '/inquiry': (context) => const InquiryView(),
-    // '/faq': (context) => const FaqView(),
-    // '/terms': (context) => const TermsView(),
-    // '/logout': (context) => const LogoutView(),
-    // '/withdraw': (context) => const WithdrawView(),
+  static final routes = [
+    // Define the routes for the application
+    GetPage(name: Routes.home, page: () => const HomeView()),
+    GetPage(
+      name: '/my_information',
+      page: () => const MyInformationView(),
+      binding: MyInformationBinding(), // Binding for My Information
+    ),
     
-  };
+  ];
 }
