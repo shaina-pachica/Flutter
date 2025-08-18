@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -15,11 +16,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MyFlyn App (Shaina Pachica)',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'ABeeZee',
-      ),
-      initialRoute: AppPages.initial,
+      theme: ThemeData.light(),
+      initialRoute: Routes.splash,
       getPages: AppPages.routes,
     );
   }

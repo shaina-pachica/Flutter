@@ -49,7 +49,7 @@ class PasswordController extends GetxController {
   void savePassword() {
     if (is_saved_enabled.value) {
       Get.snackbar('Success', 'Password updated successfully!',
-          snackPosition: SnackPosition.BOTTOM);
+          snackPosition: SnackPosition.TOP);
       currentController.clear();
       newController.clear();
       verifyController.clear();
