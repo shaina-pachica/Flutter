@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myflyn_app/app/widgets/custom_frame.dart';
+import 'package:myflyn_app/app/widgets/labeled_txtfield.dart';
 import '../../controllers/basic_info_controller.dart';
 
 class BasicInfoView extends StatelessWidget {
@@ -10,21 +11,102 @@ class BasicInfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BasicInformationController controller = Get.put(BasicInformationController());
+    final BasicInformationController controller = Get.put(
+      BasicInformationController(),
+    );
+    
 
     return CustomFrame(
       title: "Basic Information",
       child: ListView(
         children: [
-          TextField(
-            decoration: const InputDecoration(labelText: 'Name'),
-            onChanged: controller.updateName,
+
+          // ID field (read-only)
+          LabeledTextField(
+            label: 'ID',
+            controller: TextEditingController(text: controller.id),
+            readOnly: true,
           ),
-          const SizedBox(height: 10),
-          TextField(
-            decoration: const InputDecoration(labelText: 'Email'),
-            onChanged: controller.updateEmail,
+
+          const SizedBox(height: 16),
+
+          Obx(
+            () => LabeledTextField(
+              label: 'Email',
+              controller: controller.emailController,
+              errorText: controller.emailError.value.isNotEmpty
+                  ? controller.emailError.value
+                  : null,
+              onChanged: controller.updateEmail,
+            ),
           ),
+
+          const SizedBox(height: 16),
+
+          Obx(
+            () => LabeledTextField(
+              label: 'Phone Number',
+              controller: controller.phoneController,
+              errorText: controller.phoneError.value.isNotEmpty
+                  ? controller.phoneError.value
+                  : null,
+              onChanged: controller.updatePhone,
+              buttonText: 'Change',
+              onButtonPressed: () {
+                // Handle change phone number logic here
+                Get.snackbar(
+                  'Phone Verification',
+                  'Authentication number sent!',
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: const Duration(seconds: 2),
+                );
+              },
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          Obx(
+            () => LabeledTextField(
+              label: 'Nickname',
+              controller: controller.nicknameController,
+              errorText: controller.nicknameError.value.isNotEmpty
+                  ? controller.nicknameError.value
+                  : null,
+              onChanged: controller.updateNickname,
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          Obx(
+            () => LabeledTextField(
+              label: 'Instagram',
+              controller: controller.instagramController,
+              errorText: controller.instagramError.value.isNotEmpty
+                  ? controller.instagramError.value
+                  : null,
+              onChanged: controller.updateInstagram,
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          Obx(
+            () => LabeledTextField(
+              label: 'Representative Work Link',
+              controller: controller.linkController,
+              errorText: controller.linkError.value.isNotEmpty
+                  ? controller.linkError.value
+                  : null,
+             // onChanged: controller.updateLink, // (❗not implemented yet, but can be added later, it gives error now)
+              readOnly: true, // Assuming this is read-only for now
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          // ❗ Portfolio, filepicker (insert here)
         ],
       ),
     );
