@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import '../widgets/profile_header.dart';
 import '../widgets/campaign_summary.dart';
 import '../widgets/menu_item.dart'; //MenuItem widget for the menu items
+import '../widgets/image_registration.dart'; // Image registration widget
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
-  final String username = "Hong Gil-dong"; // 🔹 highlight: dynamic username
+  final String username = "Hong Gil-dong"; // ❗ highlight: dynamic username
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class HomeView extends StatelessWidget {
             children: [
               ProfileHeader(username: username),
               const SizedBox(height: 20),
-              // 🔹 insert for image
+              const ImageRegistration(),
               const SizedBox(height: 20),
               const CampaignSummary(),
 

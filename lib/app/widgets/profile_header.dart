@@ -20,7 +20,7 @@ class ProfileHeader extends StatelessWidget {
                 style: TextStyle(fontSize: 20, color: Color(0xFF2E2E2E)),
               ),
               Text(
-                username, // 🔹 username
+                username, // ❗ username
                 style: const TextStyle(
                   fontSize: 28,
                   fontStyle: FontStyle.italic,

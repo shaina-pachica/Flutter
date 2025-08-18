@@ -13,6 +13,15 @@ A small Flutter project for Task Assignment by SuperCoder Recruitment Process. I
 - Co-pilot on VS-Code 
     - Convenient for debugging (asking about coding problems) and get code completions
 
+## Packages
+
+- get: ^4.6.5
+    - state management package (GetX)
+- permission_handler: ^11.3.0 
+    - package for handling permissions
+- image_picker: ^1.1.2 
+    - package for picking images from the gallery or camera
+
 ## Architecture
 1. bindings/
     - handles dependency injection (registering GetX)
