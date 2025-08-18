@@ -63,17 +63,27 @@ class BasicInformationController extends GetxController {
     } else {
       instagramError.value = '';
     }
+  }
 
-   
-
-    void updatePortfolio(String value) {
-      portfolioController.text = value;
+  void updateLink(String value) {
+    // Simple URL validation
+    final regex = RegExp(
+      r'^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(\/[\w- .\/?%&=]*)?$',
+    );
+    if (!regex.hasMatch(value)) {
+      linkError.value = 'Invalid URL format';
+    } else {
+      linkError.value = '';
     }
+  }
 
-    // Placeholder function for file picker
-    void pickPortfolioFile() {
-      // In real app, implement file picker
-      updatePortfolio('NewPortfolio.pdf');
-    }
+  void updatePortfolio(String value) {
+    portfolioController.text = value;
+  }
+
+  // Placeholder function for file picker
+  void pickPortfolioFile() {
+    // In real app, implement file picker
+    updatePortfolio('NewPortfolio.pdf');
   }
 }

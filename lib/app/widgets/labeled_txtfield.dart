@@ -6,6 +6,7 @@ class LabeledTextField extends StatelessWidget {
   final String? errorText;
   final bool readOnly;
   final Function(String)? onChanged;
+  final VoidCallback? onIconPressed;
 
   // Button
   final String? buttonText;
@@ -15,11 +16,13 @@ class LabeledTextField extends StatelessWidget {
     super.key,
     required this.label,
     required this.controller,
+    this.onIconPressed,
     this.errorText,
-    this.readOnly = false,
+    this.readOnly = false, 
     this.onChanged,
     this.buttonText,
     this.onButtonPressed,
+    
   });
 
   @override
@@ -32,7 +35,10 @@ class LabeledTextField extends StatelessWidget {
       borderSide: BorderSide(color: color, width: 1),
     );
 
-    // Main text field widget
+    // Main text field widget where the label, controller, and other properties are applied
+    // If readOnly is true, the text field will have a different style
+    // If a button is provided, it will be wrapped in a Row with the text field
+
     Widget textField = TextField(
       controller: controller,
       readOnly: readOnly,
@@ -54,7 +60,16 @@ class LabeledTextField extends StatelessWidget {
           horizontal: 16,
           vertical: 14,
         ),
+  
+      // Only show the suffix icon if onIconPressed is provided
+      suffixIcon: onIconPressed != null
+          ? IconButton(
+              icon: const Icon(Icons.attach_file, color: Colors.grey),
+              onPressed: onIconPressed,
+            )
+          : null,
       ),
+
       style: TextStyle(color: readOnly ? readOnlyTextColor : Colors.black),
     );
 

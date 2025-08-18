@@ -7,7 +7,7 @@ import 'package:myflyn_app/app/widgets/labeled_txtfield.dart';
 import '../../controllers/basic_info_controller.dart';
 
 class BasicInfoView extends StatelessWidget {
-  const BasicInfoView({Key? key}) : super(key: key);
+  const BasicInfoView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,12 @@ class BasicInfoView extends StatelessWidget {
           LabeledTextField(
             label: 'ID',
             controller: TextEditingController(text: controller.id),
-            readOnly: true,
+            readOnly: true, 
           ),
 
           const SizedBox(height: 16),
 
+          // Email field
           Obx(
             () => LabeledTextField(
               label: 'Email',
@@ -43,6 +44,7 @@ class BasicInfoView extends StatelessWidget {
 
           const SizedBox(height: 16),
 
+          // Phone number field with button
           Obx(
             () => LabeledTextField(
               label: 'Phone Number',
@@ -87,6 +89,7 @@ class BasicInfoView extends StatelessWidget {
                   ? controller.instagramError.value
                   : null,
               onChanged: controller.updateInstagram,
+              
             ),
           ),
 
@@ -99,14 +102,26 @@ class BasicInfoView extends StatelessWidget {
               errorText: controller.linkError.value.isNotEmpty
                   ? controller.linkError.value
                   : null,
-             // onChanged: controller.updateLink, // (❗not implemented yet, but can be added later, it gives error now)
-              readOnly: true, // Assuming this is read-only for now
+              onChanged: controller.updateLink,
             ),
           ),
 
           const SizedBox(height: 16),
 
           // ❗ Portfolio, filepicker (insert here)
+          LabeledTextField(
+            label: 'Portfolio',
+            controller: controller.portfolioController,
+            onIconPressed: () {
+              // Handle file picker logic here
+              Get.snackbar(
+                'File Picker',
+                'Open file picker to select portfolio!',
+                snackPosition: SnackPosition.BOTTOM,
+                duration: const Duration(seconds: 2),
+              );
+            },
+          ),
         ],
       ),
     );

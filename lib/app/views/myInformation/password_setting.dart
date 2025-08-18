@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class PasswordSettingView extends StatefulWidget {
-  const PasswordSettingView({Key? key}) : super(key: key);
+  const PasswordSettingView({super.key});
 
   @override
   State<PasswordSettingView> createState() => _PasswordSettingViewState();
