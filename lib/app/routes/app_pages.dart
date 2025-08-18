@@ -1,4 +1,6 @@
 import 'package:get/get.dart'; // Importing GetX for state management
+import 'package:myflyn_app/app/bindings/basic_info_binding.dart';
+import 'package:myflyn_app/app/views/myInformation/basic_info_view.dart';
 
 // Importing views for routing
 import '../views/home_view.dart';
@@ -21,6 +23,10 @@ class AppPages {
       page: () => const MyInformationView(),
       binding: MyInformationBinding(), // Binding for My Information
     ),
-    
+    GetPage(
+      name: Routes.basicInformation,
+      page: () => const BasicInfoView(),
+      binding: BasicInformationBinding(), // Binding for Basic Information
+    ),
   ];
 }

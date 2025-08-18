@@ -8,6 +8,7 @@ class CustomHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
       color: Colors.white,
       child: Column(
@@ -24,8 +25,8 @@ class CustomHeader extends StatelessWidget {
             style: const TextStyle(
               fontSize: 28,
               fontFamily: "ABeeZee",
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w400,
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w700,
               color: Color(0xFF2E2E2E),
             ),
           ),

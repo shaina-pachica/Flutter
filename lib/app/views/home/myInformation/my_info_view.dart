@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myflyn_app/app/widgets/custom_frame.dart';
-import '../../controllers/my_info_controller.dart';
-import '../../widgets/menu_item.dart';
+import '../../../controllers/my_info_controller.dart';
+import '../../../widgets/menu_item.dart';
+import '../../../widgets/custom_header.dart';
 
 class MyInformationView extends GetView<MyInformationController> {
   const MyInformationView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CustomFrame(
-      title: "My Information",
-      child: ListView(
+    return Scaffold(
+      body: ListView(
         children: [
+          const CustomHeader(title: "My Information"),
+          const SizedBox(height: 50),
+          // Reusable widgets
           MenuItem(
             title: "Basic information",
             on_tap: () => Get.toNamed('/basic_information'),

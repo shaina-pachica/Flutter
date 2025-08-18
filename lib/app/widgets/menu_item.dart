@@ -22,7 +22,12 @@ class MenuItem extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         decoration: BoxDecoration(
-          border: Border.all(color: const Color(0xFFE0E0E0)),
+          border: Border(
+            bottom: BorderSide(
+              color: Color(0xFFE0E0E0),
+              width: 1,
+            ),
+          )
         ),
         child: Row(
           children: [

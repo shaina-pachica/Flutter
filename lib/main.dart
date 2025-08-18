@@ -15,6 +15,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MyFlyn App (Shaina Pachica)',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        fontFamily: 'ABeeZee',
+      ),
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
     );
