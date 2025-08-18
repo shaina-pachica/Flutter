@@ -1,6 +1,9 @@
 import 'package:get/get.dart'; // Importing GetX for state management
 import 'package:myflyn_app/app/bindings/basic_info_binding.dart';
+import 'package:myflyn_app/app/bindings/password_setting_binding.dart';
 import 'package:myflyn_app/app/views/myInformation/basic_info_view.dart';
+import 'package:myflyn_app/app/views/myInformation/password_setting_view.dart';
+
 
 // Importing views for routing
 import '../views/home_view.dart';
@@ -27,6 +30,11 @@ class AppPages {
       name: Routes.basicInformation,
       page: () => const BasicInfoView(),
       binding: BasicInformationBinding(), // Binding for Basic Information
+    ),
+    GetPage(
+      name: Routes.passwordSetting,
+      page: () => const PasswordSettingView(),
+      binding: PasswordSettingBinding(), // Binding for Password Setting
     ),
   ];
 }

@@ -19,7 +19,7 @@ class MyInformationView extends GetView<MyInformationController> {
           ),
           MenuItem(
             title: "Password setting",
-            on_tap: () => Get.toNamed('/password_setting'),
+            on_tap: () => Get.toNamed('/password_setting_view'),
           ),
           MenuItem(
             title: "Interest category",

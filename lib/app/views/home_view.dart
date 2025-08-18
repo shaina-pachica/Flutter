@@ -55,7 +55,7 @@ class HomeView extends StatelessWidget {
                 title: "FAQ",
                 leading_icon: Icon(Icons.help_outline),
                 on_tap: () {
-                  // TODO: connect to FAQ view
+                  // TODO: connect to FAQ vziew
                 },
               ),
               MenuItem(

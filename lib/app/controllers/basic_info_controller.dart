@@ -44,7 +44,7 @@ class BasicInformationController extends GetxController {
 
     // Set initial values for text fields
     initial_name = nameController.text;
-    initial_email = emailController.text; 
+    initial_email = emailController.text;
     initial_phone = phoneController.text;
     initial_nickname = nicknameController.text;
     initial_instagram = instagramController.text;
@@ -75,24 +75,22 @@ class BasicInformationController extends GetxController {
   void saveChanges() {
     // Implement your save logic here
     Get.snackbar(
-        'Profile Update',
-        'Your changes have been saved successfully.',
-        snackPosition: SnackPosition.TOP,
-        duration: const Duration(seconds: 2),
-      );
+      'Profile Update',
+      'Your changes have been saved successfully.',
+      snackPosition: SnackPosition.TOP,
+      duration: const Duration(seconds: 2),
+    );
 
     // Update initial values after save
     initial_name = nameController.text;
     initial_email = emailController.text;
-    initial_phone = phoneController.text; 
+    initial_phone = phoneController.text;
     initial_nickname = nicknameController.text;
     initial_instagram = instagramController.text;
     initial_portfolio = portfolioController.text;
-    
+
     has_changes.value = false; // Reset button state
   }
-
-  
 
   // Update functions
   void updateEmail(String value) {
