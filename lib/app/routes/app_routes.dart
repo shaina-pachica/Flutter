@@ -1,6 +1,7 @@
 part of 'app_pages.dart';
 
 abstract class Routes {
+  static const splash = '/splash'; // A0
   static const home = '/home'; // A1
   static const myInformation = '/my_information'; // A2
   static const basicInformation = '/basic_information';
