@@ -1,8 +1,12 @@
 # myflyn_app
 
-A small Flutter project for Task Assignment by SuperCoder Recruitment Process. Implemented a mobile application based on the provided [Figma design]. 
+A small Flutter project for Task Assignment by SuperCoder Recruitment Process. Implemented a mobile application based on the provided Figma design. 
 
+(c) Supercoder
 (https://www.figma.com/design/nTWqe0LRliDCpCzzq4Dnch/Developer-Recruitment-Task-UIUX---Flutter?node-id=0-1&p=f&t=yeiF2kbOydKSciQj-0)
+
+(c) MyCopy (Translated)
+https://www.figma.com/design/ovkPzadTBV9aHeOTP9jU6B/Flutter-Practive?node-id=0-1&t=5W8XSTlE0xdkNkeI-1
 
 ## UI Libraries used
 
@@ -36,3 +40,17 @@ A small Flutter project for Task Assignment by SuperCoder Recruitment Process. I
 5. routes/
     - defines the app (myflyn) navigation paths
 
+==
+
+## Developer's Note
+### Personal Documentation
+Task is done as per the instructions needed. 22hrs since receiving the email (18hrs straight coding). Given the time constraints, this is what I am able to create by far. 
+
+If given the time or if I desire to finish and implement the whole UI/UX and its potential features, I would gladly do the following:
+    - Fix screen connections
+    - Refactor the code further
+    - Create a better file structure (architecture)
+    - Improve the design (icon, background, fonts, placings)
+    - Incorporate user-friendly transitions
+    - (... to be continued)
+    
