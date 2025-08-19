@@ -2,11 +2,9 @@
 ### Overview
 This project was implemented based on the provided Figma design within ~22 hours (18 hours of straight coding). The goal was to follow the assignment guidelines, focusing on clean architecture, state management with GetX, and reactive UI.
 
-(c) Supercoder
-(https://www.figma.com/design/nTWqe0LRliDCpCzzq4Dnch/Developer-Recruitment-Task-UIUX---Flutter?node-id=0-1&p=f&t=yeiF2kbOydKSciQj-0)
+[Figma Design by Supercoder (Korean Text)](https://www.figma.com/design/nTWqe0LRliDCpCzzq4Dnch/Developer-Recruitment-Task-UIUX---Flutter?node-id=0-1&p=f&t=yeiF2kbOydKSciQj-0)
 
-(c) MyCopy (Translated)
-https://www.figma.com/design/ovkPzadTBV9aHeOTP9jU6B/Flutter-Practive?node-id=0-1&t=5W8XSTlE0xdkNkeI-1
+[Copy (Translated by Shaina Pachica (English Text)](https://www.figma.com/design/ovkPzadTBV9aHeOTP9jU6B/Flutter-Practive?node-id=0-1&t=5W8XSTlE0xdkNkeI-1)
 
 ## Tech Stack
 - **Flutter 3.35.1**
@@ -68,6 +66,8 @@ If more time were available, I would further enhance the project by:
 I will also be glad to provide a video walkthrough of the code if required.
 
 ## Installation & Run Instruction
+
+### OPTION 1 : Run from the Machine
 1. Clone the repository
    ```
    git clone <repo-link>
@@ -81,3 +81,8 @@ I will also be glad to provide a video walkthrough of the code if required.
     ```
     flutter run
     ```
+
+### OPTION 2 : Install APK (v1.0.0) Directly
+For quick testing, you can download the latest release APK here:  
+[Download APK](https://github.com/shaina-pachica/MyFlynn_App/releases/latest)
+
