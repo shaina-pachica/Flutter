@@ -39,16 +39,19 @@ class CampaignCard extends StatelessWidget {
               CampaignButton(
                 count: applicationCount.toString(),
                 label: "Application",
+                isSelected: false,
                 onTap: () => onTabSelected("Application"),
               ),
               CampaignButton(
                 count: inProgressCount.toString(),
                 label: "In Progress",
+                isSelected: false,
                 onTap: () => onTabSelected("In Progress"),
               ),
               CampaignButton(
                 count: completeCount.toString(),
                 label: "Complete",
+                isSelected: false,
                 onTap: () => onTabSelected("Complete"),
               ),
             ],
