@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/password_controller.dart';
+import '../../controllers/password_controller.dart';
 
 class PasswordButtonRow extends StatelessWidget {
   final PasswordController controller;
@@ -25,19 +25,6 @@ class PasswordButtonRow extends StatelessWidget {
               child: const Text(
                 'Save',
                 style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
-            ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: OutlinedButton(
-              onPressed: controller.cancel,
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-              ),
-              child: const Text(
-                'Cancel',
-                style: TextStyle(color: Colors.black, fontSize: 16),
               ),
             ),
           ),

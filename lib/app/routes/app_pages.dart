@@ -2,14 +2,14 @@ import 'package:get/get.dart'; // Importing GetX for state management
 import 'package:myflyn_app/app/bindings/basic_info_binding.dart';
 import 'package:myflyn_app/app/bindings/password_setting_binding.dart';
 import 'package:myflyn_app/app/bindings/splash_binding.dart';
-import 'package:myflyn_app/app/views/myInformation/basic_info_view.dart';
-import 'package:myflyn_app/app/views/myInformation/password_setting_view.dart';
+import 'package:myflyn_app/app/views/home/myInformation/myInformation/basic_info_view.dart';
+import 'package:myflyn_app/app/views/home/myInformation/myInformation/password_setting_view.dart';
 import 'package:myflyn_app/app/views/splash_view.dart';
 
 
 // Importing views for routing
-import '../views/home_view.dart';
-import '../views/myInformation/my_info_view.dart';
+import '../views/home/myInformation/home_view.dart';
+import '../views/home/myInformation/myInformation/my_info_view.dart';
 
 // Importing bindings for dependency injection
 import '../bindings/my_info_binding.dart'; // Binding for My Information

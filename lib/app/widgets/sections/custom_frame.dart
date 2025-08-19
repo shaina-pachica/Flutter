@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myflyn_app/app/widgets/custom_header.dart';
+import 'package:myflyn_app/app/widgets/sections/custom_header.dart';
 
 class CustomFrame extends StatelessWidget {
   final String title;

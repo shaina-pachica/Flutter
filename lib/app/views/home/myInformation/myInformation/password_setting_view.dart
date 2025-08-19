@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myflyn_app/app/widgets/custom_frame.dart';
-import 'package:myflyn_app/app/widgets/password_txtfld.dart';
-import '../../controllers/password_controller.dart';
+import 'package:myflyn_app/app/widgets/sections/custom_frame.dart';
+import 'package:myflyn_app/app/widgets/inputfields/password_txtfld.dart';
+import '../../../../controllers/password_controller.dart';
 
 class PasswordSettingView extends StatelessWidget {
   const PasswordSettingView({super.key});

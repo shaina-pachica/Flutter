@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myflyn_app/app/widgets/custom_frame.dart';
-import '../../controllers/my_info_controller.dart';
-import '../../widgets/menu_item.dart';
+import 'package:myflyn_app/app/widgets/sections/custom_frame.dart';
+import '../../../../controllers/my_info_controller.dart';
+import '../../../../widgets/clickables/menu_item.dart';
 
 class MyInformationView extends GetView<MyInformationController> {
   const MyInformationView({super.key});

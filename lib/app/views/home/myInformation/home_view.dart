@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myflyn_app/app/routes/app_pages.dart';
 
-import 'package:myflyn_app/app/widgets/campaign_summary.dart';
-import '../widgets/profile_header.dart';
-import '../widgets/menu_item.dart'; //MenuItem widget for the menu items
-import '../widgets/image_registration.dart'; // Image registration widget
+import 'package:myflyn_app/app/widgets/campaign_card.dart';
+import '../../../widgets/sections/profile_header.dart';
+import '../../../widgets/clickables/menu_item.dart'; //MenuItem widget for the menu items
+import '../../../widgets/picker/image_registration.dart'; // Image registration widget
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -30,7 +30,7 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              const CampaignSummary(), // Campaign summary widget
+              //const CampaignCard(), // Campaign summary widget
               const SizedBox(height: 20),
               MenuItem(
                 title: "My information",

@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myflyn_app/app/widgets/custom_frame.dart';
-import 'package:myflyn_app/app/widgets/labeled_txtfield.dart';
-import '../../controllers/basic_info_controller.dart';
+import 'package:myflyn_app/app/widgets/sections/custom_frame.dart';
+import 'package:myflyn_app/app/widgets/inputfields/labeled_txtfield.dart';
+import '../../../../controllers/basic_info_controller.dart';
 
 class BasicInfoView extends StatelessWidget {
   const BasicInfoView({super.key});
