@@ -1,51 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myflyn_app/app/controllers/campaign_controller.dart';
-import 'package:myflyn_app/app/widgets/campaign_button.dart';
-import 'package:myflyn_app/app/widgets/sections/custom_header.dart';
+import 'package:myflyn_app/app/widgets/sections/custom_frame.dart';
 
-
-class CampaignSummaryView extends StatelessWidget {
-  const CampaignSummaryView({super.key});
+class CampaignView extends StatelessWidget {
+  const CampaignView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CampaignController());
+    // final controller = Get.find<CampaignController>();
 
-    return Scaffold(
-     body: Column(
-        children: [
-          // Custom header
-          const CustomHeader(title: 'My Campaign'),
+    return DefaultTabController(
+      length: 3, // 3 tabs
+      child: CustomFrame(
+        title: "My Campaigns",
+        child: Column(
+          children: [
+            // --- Tab Bar ---
+            const TabBar(
+              labelColor: Colors.deepPurple,
+              unselectedLabelColor: Colors.grey,
+              indicatorColor: Colors.deepPurple,
+              tabs: [
+                Tab(text: "Application"),
+                Tab(text: "In Progress"),
+                Tab(text: "Completed"),
+              ],
+            ),
 
-          const SizedBox(height: 12),
-
-          // Tab buttons
-          Obx(() => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // --- Tab Content ---
+            Expanded(
+              child: TabBarView(
                 children: [
-                  CampaignButton(
-                    label: 'Application',
-                    count: controller.applicationCount.value.toString(),
-                    isSelected: controller.selectedTab.value == 'Application',
-                    onTap: () => controller.selectTab('Application'),
+                  // In Progress Tab
+                  ListView(
+                    children: const [
+                      ListTile(title: Text("Campaign 1 - In Progress")),
+                      ListTile(title: Text("Campaign 2 - In Progress")),
+                    ],
                   ),
-                  CampaignButton(
-                    label: 'In Progress',
-                    count: controller.inProgressCount.value.toString(),
-                    isSelected: controller.selectedTab.value == 'In Progress',
-                    onTap: () => controller.selectTab('In Progress'),
+
+                  // Completed Tab
+                  ListView(
+                    children: const [
+                      ListTile(title: Text("Campaign 1 - Completed")),
+                      ListTile(title: Text("Campaign 2 - Completed")),
+                    ],
                   ),
-                  CampaignButton(
-                    label: 'Complete',
-                    count: controller.completeCount.value.toString(),
-                    isSelected: controller.selectedTab.value == 'Complete',
-                    onTap: () => controller.selectTab('Complete'),
+
+                  // Drafts Tab
+                  ListView(
+                    children: const [
+                      ListTile(title: Text("Campaign 1 - Draft")),
+                      ListTile(title: Text("Campaign 2 - Draft")),
+                    ],
                   ),
                 ],
-              )
+              ),
             ),
-        ],
+          ],
+        ),
       ),
     );
   }

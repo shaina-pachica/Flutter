@@ -6,20 +6,19 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-  width: double.infinity,
-  height: double.infinity,
-  color: const Color(0xFF430C7E),
-  child: Center(
-    child: Text(
-      'MY FLYN',
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 40,
-        fontStyle: FontStyle.italic,
+      width: double.infinity,
+      height: double.infinity,
+      color: const Color(0xFF430C7E),
+      child: Center(
+        child: Text(
+          'MY FLYN',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 40,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
       ),
-    ),
-  ),
-);
-
+    );
   }
 }

@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'campaign_button.dart';
+import '../controllers/campaign_controller.dart';
 
 class CampaignCard extends StatelessWidget {
-  final int applicationCount;
-  final int inProgressCount;
-  final int completeCount;
-  final Function(String tab) onTabSelected;
-
-  const CampaignCard({
-    super.key,
-    this.applicationCount = 0,
-    this.inProgressCount = 0,
-    this.completeCount = 0,
-    required this.onTabSelected,
-  });
+  const CampaignCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CampaignController>();
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(12),
@@ -28,34 +21,35 @@ class CampaignCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "My Campaign",
-            style: TextStyle(fontSize: 12, color: Color(0xFF2E2E2E)),
-          ),
+          const Text("My Campaign",
+              style: TextStyle(fontSize: 12, color: Color(0xFF2E2E2E))),
           const SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              CampaignButton(
-                count: applicationCount.toString(),
-                label: "Application",
-                isSelected: false,
-                onTap: () => onTabSelected("Application"),
-              ),
-              CampaignButton(
-                count: inProgressCount.toString(),
-                label: "In Progress",
-                isSelected: false,
-                onTap: () => onTabSelected("In Progress"),
-              ),
-              CampaignButton(
-                count: completeCount.toString(),
-                label: "Complete",
-                isSelected: false,
-                onTap: () => onTabSelected("Complete"),
-              ),
-            ],
-          ),
+          Obx(() => Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CampaignButton(
+                    label: "Application",
+                    count: controller.applicationCount.value,
+                    route: "/campaign",
+                    onTap: controller.goToCampaignView
+
+                  ),
+                  CampaignButton(
+                    label: "In Progress",
+                    count: controller.inProgressCount.value,
+                    route: "/campaign",
+                    onTap: controller.goToCampaignView
+
+                  ),
+                  CampaignButton(
+                    label: "Complete",
+                    count: controller.completeCount.value,
+                    route: "/campaign",
+                   onTap: controller.goToCampaignView
+
+                  ),
+                ],
+              )),
         ],
       ),
     );

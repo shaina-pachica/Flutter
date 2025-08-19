@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myflyn_app/app/controllers/campaign_controller.dart';
 import 'package:myflyn_app/app/routes/app_pages.dart';
-
 import 'package:myflyn_app/app/widgets/campaign_card.dart';
+
 import '../../../widgets/sections/profile_header.dart';
 import '../../../widgets/clickables/menu_item.dart'; //MenuItem widget for the menu items
 import '../../../widgets/picker/image_registration.dart'; // Image registration widget
@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Initialize your controller here. Replace HomeController with your actual controller class if different.
-    final controller = Get.put(CampaignController());
+    Get.put(CampaignController());
 
     return Scaffold(
       body: ListView(
@@ -35,14 +35,7 @@ class HomeView extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               
-               Obx(
-            () => CampaignCard(
-              applicationCount: controller.applicationCount.value,
-              inProgressCount: controller.inProgressCount.value,
-              completeCount: controller.completeCount.value,
-              onTabSelected: controller.selectTab,
-            ),
-          ),
+              CampaignCard(), // Display the campaign card
 
               const SizedBox(height: 20),
               MenuItem(

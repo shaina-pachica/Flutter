@@ -1,11 +1,13 @@
 import 'package:get/get.dart'; // Importing GetX for state management
 import 'package:myflyn_app/app/bindings/basic_info_binding.dart';
+import 'package:myflyn_app/app/bindings/campaign_binding.dart';
 import 'package:myflyn_app/app/bindings/password_setting_binding.dart';
 import 'package:myflyn_app/app/bindings/splash_binding.dart';
+import 'package:myflyn_app/app/views/home/myInformation/myCampaign/campaign_view.dart';
 import 'package:myflyn_app/app/views/home/myInformation/myInformation/basic_info_view.dart';
 import 'package:myflyn_app/app/views/home/myInformation/myInformation/password_setting_view.dart';
 import 'package:myflyn_app/app/views/splash_view.dart';
-
+import 'package:myflyn_app/app/widgets/campaign_card.dart';
 
 // Importing views for routing
 import '../views/home/myInformation/home_view.dart';
@@ -17,10 +19,6 @@ import '../bindings/my_info_binding.dart'; // Binding for My Information
 part 'app_routes.dart';
 
 class AppPages {
-  static const initial = Routes.splash; // Initial route for the app
-  static const home = '/home'; // Home route
-  static const basicInfo = '/basic-info'; // Initial route for the app);
-
   static final routes = [
     // Define the initial route for the application
     GetPage(
@@ -44,5 +42,11 @@ class AppPages {
       page: () => const PasswordSettingView(),
       binding: PasswordSettingBinding(), // Binding for Password Setting
     ),
+    GetPage(
+      name: '/campaign_summary_view',
+      page: () => const CampaignView(),
+      binding: CampaignBinding(), // Binding for CampaignController
+    ),
+    
   ];
 }
