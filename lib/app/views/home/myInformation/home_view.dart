@@ -47,42 +47,66 @@ class HomeView extends StatelessWidget {
                 title: "Announcement",
                 leading_icon: Icon(Icons.announcement_outlined),
                 on_tap: () {
-                  // TODO: connect to Announcement view
+                  Get.snackbar(
+                    "Announcement",
+                    "Feature not available due to time constraint in development.",
+                    snackPosition: SnackPosition.TOP,
+                  );
                 },
               ),
               MenuItem(
                 title: "1:1 Inquiry",
                 leading_icon: Icon(Icons.forum_outlined),
                 on_tap: () {
-                  // TODO: connect to Inquire view
+                  Get.snackbar(
+                    "Announcement",
+                    "Feature not available due to time constraint in development.",
+                    snackPosition: SnackPosition.TOP,
+                  );
                 },
               ),
               MenuItem(
                 title: "FAQ",
                 leading_icon: Icon(Icons.help_outline),
                 on_tap: () {
-                  // TODO: connect to FAQ vziew
+                  Get.snackbar(
+                    "Announcement",
+                    "Feature not available due to time constraint in development.",
+                    snackPosition: SnackPosition.TOP,
+                  );
                 },
               ),
               MenuItem(
                 title: "Terms and Conditions and Policy",
                 leading_icon: Icon(Icons.description_outlined),
                 on_tap: () {
-                  // TODO: connect to TCP view
+                  Get.snackbar(
+                    "Announcement",
+                    "Feature not available due to time constraint in development.",
+                    snackPosition: SnackPosition.TOP,
+                  );
                 },
               ),
               MenuItem(
                 title: "Logout",
                 leading_icon: Icon(Icons.logout_outlined),
-                on_tap: () {
-                  // TODO: connect to Logout view
+               on_tap: () {
+                  Get.snackbar(
+                    "Announcement",
+                    "Feature not available due to time constraint in development.",
+                    snackPosition: SnackPosition.TOP,
+                  );
                 },
               ),
               MenuItem(
                 title: "Membership Withdrawal",
                 leading_icon: Icon(Icons.person_remove_outlined),
-                on_tap: () {
-                  // TODO: connect to MW view
+               on_tap: () {
+                  Get.snackbar(
+                    "Announcement",
+                    "Feature not available due to time constraint in development.",
+                    snackPosition: SnackPosition.TOP,
+                  );
                 },
               ),
             ],

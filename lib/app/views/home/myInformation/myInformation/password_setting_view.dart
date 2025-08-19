@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:myflyn_app/app/widgets/clickables/save_btn.dart';
 import 'package:myflyn_app/app/widgets/sections/custom_frame.dart';
 import 'package:myflyn_app/app/widgets/inputfields/password_txtfld.dart';
 import '../../../../controllers/password_controller.dart';
@@ -14,7 +15,6 @@ class PasswordSettingView extends StatelessWidget {
     return CustomFrame(
       title: 'Password Setting',
       child: ListView(
-        padding: const EdgeInsets.all(20),
         children: [
           PasswordTextField(
             label: 'Basic Password',
@@ -22,7 +22,7 @@ class PasswordSettingView extends StatelessWidget {
                 '8-16 digits English, numbers, special character combination',
             controller: controller.currentController,
             showToggle: controller.show_current,
-            error: controller.new_error,
+            error: controller.current_error,
             onChanged: controller.validateCurrent,
           ),
 
@@ -52,40 +52,14 @@ class PasswordSettingView extends StatelessWidget {
           const SizedBox(height: 32),
 
           Obx(
-            () => Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: controller.is_saved_enabled.value
-                        ? controller.savePassword
-                        : null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.purple,
-                      disabledBackgroundColor: Colors.grey.shade400,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                    ),
-                    child: const Text(
-                      'Save',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: OutlinedButton(
-                    onPressed: controller.cancel,
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                    ),
-                    child: const Text(
-                      'Cancel',
-                      style: TextStyle(color: Colors.black, fontSize: 16),
-                    ),
-                  ),
-                ),
-              ],
+            () => SaveButton(
+              enabled: controller.has_changes.value,
+              onPressed: controller.saveChanges,
+              label: 'Save Changes',
             ),
           ),
+
+          const SizedBox(height: 16),
         ],
       ),
     );

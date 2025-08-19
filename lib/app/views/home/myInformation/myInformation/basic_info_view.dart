@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:myflyn_app/app/widgets/clickables/save_btn.dart';
 import 'package:myflyn_app/app/widgets/sections/custom_frame.dart';
 import 'package:myflyn_app/app/widgets/inputfields/labeled_txtfield.dart';
 import '../../../../controllers/basic_info_controller.dart';
@@ -117,19 +118,12 @@ class BasicInfoView extends StatelessWidget {
 
           const SizedBox(height: 25),
 
-          Obx(() => ElevatedButton(
-      onPressed: controller.has_changes.value ? controller.saveChanges : null,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: controller.has_changes.value ? Colors.purple : Colors.grey,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        minimumSize: const Size(double.infinity, 52),
-      ),
-      child: const Text(
-        "Save",
-        style: TextStyle(fontSize: 16, color: Colors.white),
-      ),
-    )),
-
+          Obx(
+            () => SaveButton(
+              enabled: controller.has_changes.value,
+              onPressed: controller.saveChanges,
+            ),
+          ),
 
           const SizedBox(height: 16),
         ],

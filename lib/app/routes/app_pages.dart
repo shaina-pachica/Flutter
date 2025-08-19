@@ -7,7 +7,6 @@ import 'package:myflyn_app/app/views/home/myInformation/myCampaign/campaign_view
 import 'package:myflyn_app/app/views/home/myInformation/myInformation/basic_info_view.dart';
 import 'package:myflyn_app/app/views/home/myInformation/myInformation/password_setting_view.dart';
 import 'package:myflyn_app/app/views/splash_view.dart';
-import 'package:myflyn_app/app/widgets/campaign_card.dart';
 
 // Importing views for routing
 import '../views/home/myInformation/home_view.dart';

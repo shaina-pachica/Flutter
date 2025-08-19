@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 
 class BasicInformationController extends GetxController {
+
   // Text controllers
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -61,7 +62,6 @@ class BasicInformationController extends GetxController {
   }
 
   // Set isChanged to true if any field is different from its initial value
-  // For simplicity, just set true if any controller is non-empty
   void _onFieldChanged() {
     has_changes.value =
         nameController.text.isNotEmpty ||
@@ -72,8 +72,9 @@ class BasicInformationController extends GetxController {
         portfolioController.text.isNotEmpty;
   }
 
+  // Confirms the changes and shows a success message
+  // Re-assign initial values to text fields after saving
   void saveChanges() {
-    // Implement your save logic here
     Get.snackbar(
       'Profile Update',
       'Your changes have been saved successfully.',
@@ -88,8 +89,8 @@ class BasicInformationController extends GetxController {
     initial_nickname = nicknameController.text;
     initial_instagram = instagramController.text;
     initial_portfolio = portfolioController.text;
-
-    has_changes.value = false; // Reset button state
+    // Disable the save button after saving
+    has_changes.value = false; 
   }
 
   // Update functions
@@ -167,7 +168,6 @@ class BasicInformationController extends GetxController {
         duration: const Duration(seconds: 2),
       );
     } else {
-      // User canceled the picker
       Get.snackbar(
         'File Picker',
         'No file selected',

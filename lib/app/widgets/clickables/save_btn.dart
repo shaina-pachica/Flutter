@@ -1,35 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../controllers/password_controller.dart';
 
-class PasswordButtonRow extends StatelessWidget {
-  final PasswordController controller;
+class SaveButton extends StatelessWidget {
+  final bool enabled;
+  final VoidCallback? onPressed;
+  final String label;
 
-  const PasswordButtonRow({super.key, required this.controller});
+  const SaveButton({
+    super.key,
+    required this.enabled,
+    required this.onPressed,
+    this.label = "Save",
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Row(
-        children: [
-          Expanded(
-            child: ElevatedButton(
-              onPressed: controller.is_saved_enabled.value
-                  ? controller.savePassword
-                  : null,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple,
-                disabledBackgroundColor: Colors.grey.shade400,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-              ),
-              child: const Text(
-                'Save',
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
-            ),
-          ),
-        ],
+    return ElevatedButton(
+      onPressed: enabled ? onPressed : null,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: enabled ? Colors.purple : Colors.grey,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        minimumSize: const Size(double.infinity, 52),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(fontSize: 16, color: Colors.white),
       ),
     );
   }
 }
+
