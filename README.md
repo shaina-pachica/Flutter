@@ -84,5 +84,5 @@ I will also be glad to provide a video walkthrough of the code if required.
 
 ### OPTION 2 : Install APK (v1.0.0) Directly
 For quick testing, you can download the latest release APK here:  
-[Download APK](https://github.com/shaina-pachica/MyFlynn_App/releases/latest)
+[Download APK](https://github.com/shaina-pachica/MyFlyn_App/blob/main/release/app-release.apk))
 
